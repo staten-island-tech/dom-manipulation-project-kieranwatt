@@ -1,0 +1,31 @@
+#big-black-box {
+    background-color: black;
+  
+    font-size: 2vh;
+    color: cornsilk;
+    height: 100vh;
+    text-align: center;
+  }
+#red {
+    background-color: red;
+    font-size: 2vh;
+    color: cornsilk;
+    height: 100vh;
+    text-align: center;
+}
+/* html,
+body,
+*{
+    padding: 0;
+    margin: 0px;
+    background-color: white;
+    font-size: 62.5%;
+    text-align: center;
+    font-family: 'Libre Franklin', sans-serif;
+    font-family: 'Mooli', sans-serif;
+    font-family: 'Pinyon Script', cursive;
+}
+
+.header {
+    font-size: 8rem;
+} */
