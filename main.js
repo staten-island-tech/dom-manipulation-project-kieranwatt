@@ -1,5 +1,4 @@
 const DomSelectors = {
-    button: document.getElementById("btn"),
     text: document.querySelector("#text"),
     box: document.getElementById("big-black-box"),
     points: document.querySelectorAll(".point"),
@@ -35,7 +34,12 @@ function injectCard(card) {
         "afterbegin",`
         <div class="bladeecard1">
         <div class="card">
-        <h2> 
+        <h2> ${card.title}<h2/> 
+        <img class= "card-img" src="${card.image}" alt="">
+        <p> ${card.description}</p>
+        </div>
+        <button class="removeBtn" onclick="removeCard()">Remove<button>
+        </div>
 
     `)
 }
