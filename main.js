@@ -1,9 +1,9 @@
 const DomSelectors = {
     form: document.querySelector("#input-form"),
-    box: document.querySelector("box"),
-    bladeename: document.querySelector("namebladee"),
-    bladeebday: document.querySelector("bdaybladee"),
-    bladeeimg: document.querySelector("imagebladee"),
+    box: document.querySelector(".box"),
+    bladeename: document.querySelector(".namebladee"),
+    bladeebday: document.querySelector(".bdaybladee"),
+    bladeeimg: document.querySelector(".imagebladee"),
 };
 
 DomSelectors.form.addEventListener("submit", function(event) {
@@ -11,7 +11,7 @@ DomSelectors.form.addEventListener("submit", function(event) {
     const card = {
         bladeename: DomSelectors.namebladee.value,
         bladeeimg: DomSelectors.imagebladee.value,
-        bladeebday: DomSelectors.bdaybladee.value,
+        bladeebday: DomSelectors.bladeebday.value,
     }
     injectCard(card);
     deletee();
@@ -19,7 +19,7 @@ DomSelectors.form.addEventListener("submit", function(event) {
 
 function injectCard(card) {
     DomSelectors.box.insertAdjacentHTML(
-        "afterbegin",`
+        "beforeend",`
         <div class="bladeecard1">
         <div class="card">
         <h1> ${card.title} </h2>
@@ -27,7 +27,7 @@ function injectCard(card) {
         <h3>${card.bladeebday}</p>
         </div>
         <button class="removeBtn" onclick="removeCard()">Remove<button>
-        </div>`)
+        </div>`);
 }
 
 function clearFields() {
