@@ -1,16 +1,16 @@
 const DomSelectors = {
     form: document.querySelector("#input-form"),
-    box: document.querySelector(".box"),
-    bladeename: document.querySelector(".namebladee"),
-    bladeebday: document.querySelector(".bdaybladee"),
-    bladeeimg: document.querySelector(".imagebladee"),
+    box: document.querySelector("#box"),
+    bladeename: document.querySelector("#bladeename"),
+    bladeebday: document.querySelector("#bladeebday"),
+    bladeeimg: document.querySelector("#bladeeimg"),
 };
 
 DomSelectors.form.addEventListener("submit", function(event) {
     event.preventDefault();
     const card = {
-        bladeename: DomSelectors.namebladee.value,
-        bladeeimg: DomSelectors.imagebladee.value,
+        bladeename: DomSelectors.bladeename.value,
+        bladeeimg: DomSelectors.bladeeimg.value,
         bladeebday: DomSelectors.bladeebday.value,
     }
     injectCard(card);
