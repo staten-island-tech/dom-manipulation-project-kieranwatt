@@ -39,6 +39,8 @@ function clearFields() {
     DomSelectors.bladeename.value = "";
 }
 
-function removeCard(element) {
+/* function removeCard(element) {
     element.parentElement.remove();
-}
+} */
+
+function remove()
