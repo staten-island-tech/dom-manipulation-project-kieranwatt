@@ -6,7 +6,7 @@ const DomSelectors = {
     bladeeimg: document.querySelector("#bladeeimg"),
 };
 
-DomSelectors.form.addEventListener("submit", function(event) {
+DomSelectors.form.addEventListener("submit", function (event) {
     event.preventDefault();
     const card = {
         bladeename: DomSelectors.bladeename.value,
@@ -14,6 +14,7 @@ DomSelectors.form.addEventListener("submit", function(event) {
         bladeebday: DomSelectors.bladeebday.value,
     };
     injectCard(card);
+    remove();
     clearFields();
 });
 
@@ -25,7 +26,7 @@ function injectCard(card) {
                 <img class="card-img" src="${card.bladeeimg}" alt="">
                 <h3>${card.bladeebday}</h3>
             </div>
-            <button class="removeBtn" onclick="removeCard(this)">Remove</button>
+            <button class="removeBtn">Remove</button>
         </div>
     `;
     DomSelectors.box.insertAdjacentHTML("beforeend", cardHTML);
@@ -33,13 +34,18 @@ function injectCard(card) {
 
 const images = document.querySelectorAll('.card-img');
 
+function remove() {
+    const remove = document.querySelectorAll(".removeBtn");
+    remove.forEach(button => {
+        button.addEventListener("click", function () {
+            button.parentElement.remove();
+        });
+    });
+}
+
 function clearFields() {
     DomSelectors.bladeebday.value = "";
     DomSelectors.bladeeimg.value = "";
     DomSelectors.bladeename.value = "";
 }
-
-function removeCard(element) {
-    element.parentElement.remove();
-} 
 
